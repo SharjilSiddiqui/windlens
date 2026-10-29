@@ -18,8 +18,6 @@ See [Data methodology](docs/DATA_METHODOLOGY.md) for the precise selection and a
 - **Frontend:** [https://windlens-5sme.onrender.com](https://windlens-5sme.onrender.com) (URL supplied for this project; deployment status not checked as part of this documentation update)
 - **Backend health:** [https://windlens-api-rvo8.onrender.com/api/health](https://windlens-api-rvo8.onrender.com/api/health) (URL supplied; not live-verified)
 - **Backend API docs:** [https://windlens-api-rvo8.onrender.com/docs](https://windlens-api-rvo8.onrender.com/docs) (URL supplied; not live-verified)
-- **Screenshot:** _Add a screenshot here._
-- **Unlisted YouTube demo:** _Add the unlisted demo URL after recording._
 
 ## Architecture
 
@@ -93,12 +91,12 @@ Open the same local URLs above. Compose starts the backend and Vite development 
 
 ## Configuration
 
-| Variable | Used by | Default / configured value | Purpose |
-| --- | --- | --- | --- |
-| `VITE_API_BASE_URL` | Frontend | `http://localhost:8000` fallback; `frontend/.env.production` points to `https://windlens-api-rvo8.onrender.com` | Base URL for browser API requests. Set it in the frontend environment before building for deployment. |
-| `CORS_ORIGINS` | Backend | `http://localhost:5173,https://windlens-5sme.onrender.com`; Compose overrides to `http://localhost:5173` | Comma-separated allowed browser origins. |
-| `ELEXON_API_BASE` | Backend | `https://data.elexon.co.uk/bmrs/api/v1` | Base path for Elexon BMRS dataset requests. |
-| `VITE_API_URL` | Compose only | `http://localhost:8000` | Present in `docker-compose.yml` but not read by application code; use `VITE_API_BASE_URL` to configure the frontend. |
+| Variable            | Used by      | Default / configured value                                                                                      | Purpose                                                                                                              |
+| ------------------- | ------------ | --------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `VITE_API_BASE_URL` | Frontend     | `http://localhost:8000` fallback; `frontend/.env.production` points to `https://windlens-api-rvo8.onrender.com` | Base URL for browser API requests. Set it in the frontend environment before building for deployment.                |
+| `CORS_ORIGINS`      | Backend      | `http://localhost:5173,https://windlens-5sme.onrender.com`; Compose overrides to `http://localhost:5173`        | Comma-separated allowed browser origins.                                                                             |
+| `ELEXON_API_BASE`   | Backend      | `https://data.elexon.co.uk/bmrs/api/v1`                                                                         | Base path for Elexon BMRS dataset requests.                                                                          |
+| `VITE_API_URL`      | Compose only | `http://localhost:8000`                                                                                         | Present in `docker-compose.yml` but not read by application code; use `VITE_API_BASE_URL` to configure the frontend. |
 
 For local backend overrides, export variables in the shell before starting Uvicorn. For local frontend overrides, define `VITE_API_BASE_URL` in the frontend environment (Vite exposes `VITE_` variables to browser code). The checked-in `frontend/.env.production` contains the supplied Render API URL. No credentials are required by the implementation. Render dashboard values are not present in this repository, so the deployed settings cannot be verified here.
 
