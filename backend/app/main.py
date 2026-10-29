@@ -17,9 +17,16 @@ UK = ZoneInfo("Europe/London")
 app = FastAPI(title="WindLens API", version="0.1.0", description="Wind forecast accuracy analysis for January 2026.")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=os.getenv("CORS_ORIGINS", "http://localhost:5173").split(","),
+    allow_origins=[
+        origin.strip().rstrip("/")
+        for origin in os.getenv(
+            "CORS_ORIGINS",
+            "http://localhost:5173,https://windlens-5sme.onrender.com",
+        ).split(",")
+        if origin.strip()
+    ],
     allow_credentials=True,
-    allow_methods=["GET"],
+    allow_methods=["GET", "OPTIONS"],
     allow_headers=["*"],
 )
 
