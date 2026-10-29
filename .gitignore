@@ -1,0 +1,29 @@
+
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+build/
+coverage/
+
+# Local files
+.DS_Store
+.vscode/
+.idea/
+
+# Archives and temporary files
+*.zip
+*.log
