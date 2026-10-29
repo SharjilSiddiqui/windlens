@@ -18,6 +18,7 @@ See [Data methodology](docs/DATA_METHODOLOGY.md) for the precise selection and a
 - **Frontend:** [https://windlens-5sme.onrender.com](https://windlens-5sme.onrender.com) (URL supplied for this project; deployment status not checked as part of this documentation update)
 - **Backend health:** [https://windlens-api-rvo8.onrender.com/api/health](https://windlens-api-rvo8.onrender.com/api/health) (URL supplied; not live-verified)
 - **Backend API docs:** [https://windlens-api-rvo8.onrender.com/docs](https://windlens-api-rvo8.onrender.com/docs) (URL supplied; not live-verified)
+- **Screenshot:** (https://drive.google.com/file/d/1pKNJ81280zMS9ULG2dEH3DSni8i9JM-u/view?usp=sharing)
 
 ## Architecture
 
